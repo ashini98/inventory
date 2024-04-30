@@ -1,0 +1,8 @@
+<app-dashboard-layout (onSideNavToggle)="sideNavCollapsed = !sideNavCollapsed">
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconGrid" link="dashboard" name="Dashboard"/>
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconUser" link="login" name="Sign In"/>
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconUserPlus" link="register" name="Sign Up"/>
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconCreditCard" link="add-item" name="Items"/>
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconMessageSquareLarge" link="add-supplier" name="Suppliers"/>
+  <app-side-nav-button [sideNavCollapsed]="sideNavCollapsed" [tuiIcon]="tuiIconMessageSquareLarge" link="add-order" name="Orders"/>
+</app-dashboard-layout>

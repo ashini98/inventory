@@ -1,0 +1,36 @@
+<div class="flex flex-row items-center pr-2">
+  <tui-svg (click)="sideNavToggle.emit(!sideNavToggle)" [src]="tuiIconMenu"
+           class="text-pink-950 cursor-pointer hover:text-pink-500 select-none"
+           role="button"/>
+  <div class="text-pink-900 font-semibold mx-3 text-xl">Dashboard</div>
+
+<!--  <div class="flex flex-row items-center pr-20">-->
+<!--    <tui-svg (click)="searchBar.emit()" [src]="tuiIconSearch" placeholder="Search..."-->
+<!--             class="flex items-center mr-10 pl-8 pr-80 py-2 rounded-lg focus:outline-none-->
+<!--             placeholder-pink-500 border border-pink-700" role="button"/>-->
+<!--  </div>-->
+
+  <div class="flex-1"></div>
+  <div class="flex flex-row items-center">
+    <div class="flex flex-row mr-2">
+      <tui-svg (click)="notifications.emit()" src="tuiIconBellLarge"
+               class="text-pink-900 cursor-pointer select-none" role="button"/>
+    </div>
+
+    <div class="flex flex-row mr-4">
+      <tui-svg (click)="settingsUpdate.emit()" src="tuiIconSettingsLarge"
+               class="text-pink-900 cursor-pointer select-none" role="button"/>
+    </div>
+
+    <div class="flex flex-row items-center gap-3 mr-2">
+      <div class="text-pink-900 font-semibold">User</div>
+      <tui-avatar
+        rounded="true"
+        text="User Name"
+        class="tui-space_top-1 cursor-pointer"
+        size="s"
+      ></tui-avatar>
+    </div>
+  </div>
+
+</div>

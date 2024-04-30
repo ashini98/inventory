@@ -1,0 +1,12 @@
+<div
+  [routerLink]="link"
+  class="group flex items-center
+{{sideNavCollapsed?'justify-center flex-col gap-1':'pl-4 flex-row gap-3'}}
+hover:bg-gradient-to-r from-pink-300 to-pink-100 py-2 rounded-xl select-none cursor-pointer"
+  role="button">
+  <tui-svg [src]="tuiIcon"
+           class="text-white cursor-pointer select-none group-hover:text-pink-700" role="button"
+           style="font-size: 20px"/>
+  <div class="text-pink-100 group-hover:text-pink-700 {{sideNavCollapsed?'text-xs':'text-m'}}">{{ name }}</div>
+</div>
+

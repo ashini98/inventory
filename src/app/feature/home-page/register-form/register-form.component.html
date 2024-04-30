@@ -1,0 +1,206 @@
+<tui-scrollbar class="box">
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 rounded-lg">
+    <div>
+      <img class="mx-auto h-10 w-auto" src="assets/logo.ico" alt="Storsio">
+      <h2 class="mt-5 text-center text-2xl font-bold leading-9
+    tracking-tight text-gray-900">Signup</h2>
+    </div>
+
+    <div class="mt-10">
+      <form [formGroup]="form" class="space-y-4" action="#" method="POST">
+          <div class="tui-form__row tui-form__row_multi-fields">
+            <div class="tui-form__multi-field">
+              <div class="flex flex-col">
+                <label tuiLabel="name" for="name" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>First Name</label>
+                <div>
+                  <tui-input [tuiHintContent]="'Enter Your First Name'"
+                             formControlName="firstName" tuiTextfieldSize="m"
+                             [tuiTextfieldCleaner]="true">
+                    <input autocomplete="firstName" type="firstName" id="name"
+                           placeholder="First Name" tuiTextfield/>
+                  </tui-input>
+                  <tui-error [error]="[] | tuiFieldError | async"
+                             formControlName="firstName"></tui-error>
+                </div>
+              </div>
+            </div>
+
+            <div class="tui-form__multi-field">
+              <div class="flex flex-col">
+                <label tuiLabel="name" for="name" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Last Name</label>
+                <div>
+                  <tui-input [tuiHintContent]="'Enter Your Last Name'"
+                             formControlName="lastName" tuiTextfieldSize="m"
+                             [tuiTextfieldCleaner]="true">
+                    <input autocomplete="lastName" type="lastName" id="lastName"
+                           placeholder="Last Name" tuiTextfield/>
+                  </tui-input>
+                  <tui-error [error]="[] | tuiFieldError | async"
+                             formControlName="lastName"></tui-error>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="email" for="email" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Email Address</label>
+              <div class="mt-2">
+                <tui-input [tuiHintContent]="'Enter Your Email Address'"
+                           formControlName="email" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true">
+                  <input autocomplete="email" type="email" id="email"
+                         placeholder="Email Address" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="email"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="password" class="block text-sm font-medium leading-6 text-gray-900">
+                <span class="tui-required text-red-500"></span>Password</label>
+              <div class="mt-2">
+                <tui-input [tuiHintContent]="'Enter Your Password'"
+                           formControlName="password" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true">
+                  <input autocomplete="password" type="password" id="password"
+                         placeholder="Password" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="email"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="confirmPassword" class="block text-sm font-medium leading-6 text-gray-900">
+                <span class="tui-required text-red-500"></span>Confirm Password</label>
+              <div class="mt-2">
+                <tui-input [tuiHintContent]="'Confirm Your Password'"
+                           formControlName="password" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true">
+                  <input autocomplete="password" type="password" id="confirmPassword"
+                         placeholder="Confirm Password" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="email"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+          <div class="tui-form__row tui-form__row_multi-fields">
+            <div class="tui-form__multi-field">
+              <div class="flex flex-col">
+                <label for="phone"><span class="tui-required text-red-500"></span>Phone</label>
+                <div class="mt-2">
+                  <tui-input-phone [tuiHintContent]="'Enter Your Phone Number'"
+                                   formControlName="phone" tuiTextfieldSize="m"
+                                   [tuiTextfieldCleaner]="true">
+                    <input type="number" id="phone" placeholder="Enter Phone" tuiTextfield/>
+                  </tui-input-phone>
+                  <tui-error [error]="[] | tuiFieldError | async" formControlName="phone"></tui-error>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        <div formGroupName="address">
+          <div class="tui-form__row tui-form__row_multi-fields">
+            <div class="tui-form__multi-field">
+              <div class="flex flex-col">
+                <label for="address"><span class="tui-required text-red-500"></span>Address</label>
+                <div class="mt-2">
+                  <tui-input [tuiHintContent]="'Street Address'"
+                             formControlName="street" tuiTextfieldSize="m"
+                             [tuiTextfieldCleaner]="true">
+                    <input type="text" id="address" placeholder="Enter Street Address" tuiTextfield/>
+                  </tui-input>
+                  <tui-error [error]="[] | tuiFieldError | async" formControlName="street"></tui-error>
+                </div>
+              </div>
+            </div>
+            <div class="tui-form__multi-field">
+              <div class="tui-form__row">
+                <div class="flex flex-col">
+                  <label>Lane 2</label>
+                  <div class="mt-2">
+                    <tui-input [tuiHintContent]="'Street Lane 2'"
+                               formControlName="lane2" tuiTextfieldSize="m"
+                               [tuiTextfieldCleaner]="true">
+                      <input type="text" placeholder="Enter Street Lane" tuiTextfield/>
+                    </tui-input>
+                    <tui-error [error]="[] | tuiFieldError | async" formControlName="lane2"></tui-error>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__row tui-form__row_multi-fields">
+            <div class="tui-form__multi-field">
+              <div class="flex flex-col">
+                <label>City</label>
+                <div class="mt-2">
+                  <tui-input [tuiHintContent]="'City'"
+                             formControlName="city" tuiTextfieldSize="m"
+                             [tuiTextfieldCleaner]="true">
+                    <input type="text" placeholder="Colombo" tuiTextfield/>
+                  </tui-input>
+                  <tui-error [error]="[] | tuiFieldError | async" formControlName="city"></tui-error>
+                </div>
+              </div>
+            </div>
+            <div class="tui-form__multi-field">
+              <div class="tui-form__row">
+                <div class="flex flex-col">
+                  <label>Postal Code</label>
+                  <div class="mt-2">
+                    <tui-input [tuiHintContent]="'Postal code'"
+                               formControlName="postcode" tuiTextfieldSize="m"
+                               [tuiTextfieldCleaner]="true">
+                      <input type="text" placeholder="00000" tuiTextfield/>
+                    </tui-input>
+                    <tui-error [error]="[] | tuiFieldError | async" formControlName="postcode"></tui-error>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tui-form__multi-field">
+              <div class="tui-form__row">
+                <div class="flex flex-col">
+                  <label>Country</label>
+                  <div class="mt-2">
+                    <tui-input [tuiHintContent]="'Country'"
+                               formControlName="country" tuiTextfieldSize="m"
+                               [tuiTextfieldCleaner]="true">
+                      <input type="text" placeholder="SL" tuiTextfield/>
+                    </tui-input>
+                    <tui-error [error]="[] | tuiFieldError | async" formControlName="country"></tui-error>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div>
+          <button (click)="onSubmit()" type="submit" [disabled]="form.invalid || isSubmitting" showLoader="isSubmitting" class="flex w-full justify-center rounded-md
+        bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white
+        shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2
+        focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign Up</button>
+        </div>
+      </form>
+
+      <p class="mt-10 text-center text-sm text-gray-500">
+        Already have an Account?
+        <a routerLink="login" class="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">Sign In</a>
+      </p>
+    </div>
+  </div>
+</tui-scrollbar>

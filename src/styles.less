@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "node_modules/@taiga-ui/core/styles/taiga-ui-theme";
+@import "node_modules/@taiga-ui/core/styles/taiga-ui-fonts";
+@import "node_modules/@taiga-ui/styles/taiga-ui-global";
+
+@layer utilities {
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  .mini-scrollbar::-webkit-scrollbar {
+    width: 6px; /* width of the entire scrollbar */
+  }
+
+  .mini-scrollbar::-webkit-scrollbar-track {
+  @apply bg-gradient-to-b from-white to-indigo-200;
+  }
+
+  .mini-scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 20px; /* roundness of the scroll thumb */
+    border: 0 solid rgb(255, 255, 255); /* creates padding around scroll thumb */
+  @apply bg-gradient-to-b from-indigo-200 to-white;
+  }
+}
+
+.width-transition {
+  transition: max-width 0.3s ease;
+}
+
+.slider {
+  width: 12.5rem;
+  margin-bottom: 1em;
+}
+
+[tuiWrapper][data-appearance='edit-save'] {
+  background: #f30eaa;
+  color: #fff;
+
+  .wrapper-hover({
+    background: #882669;
+  });
+
+  .wrapper-active({
+    background: #882669;
+  });
+
+  .wrapper-disabled({
+    background: #eaecee;
+  });
+}
+
+[tuiWrapper][data-appearance='edit-cancel'] {
+  background: #a0a4a3;
+  //color: #fff;
+
+  outline-width: thick;
+  outline-color: darkslategray;
+  color: #eaecee;
+
+  .wrapper-hover({
+    background: #526565;
+  });
+
+  .wrapper-active({
+    background: #526565;
+  });
+
+  .wrapper-disabled({
+    background: #eaecee;
+  });
+
+}
+
+[tuiWrapper][data-appearance='edit-save'] {
+  background: #f30eaa;
+  color: #fff;
+
+  .wrapper-hover({
+    background: #882669;
+  });
+
+  .wrapper-active({
+    background: #882669;
+  });
+
+  .wrapper-disabled({
+    background: #eaecee;
+  });
+}
+
+[tuiWrapper][data-appearance='add-new'] {
+  [tuiButton][data-size='m'] {
+    background: #f30eaa;
+    --tui-padding: 1rem;
+  }
+
+  .wrapper-hover({
+    background: #882669;
+  });
+
+  .wrapper-active({
+    background: #882669;
+  });
+
+  .wrapper-disabled({
+    background: #eaecee;
+  });
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+
+  --tui-chart-0: var(--tui-support-12);
+  --tui-chart-1: var(--tui-support-01);
+  --tui-chart-2: var(--tui-support-03);
+  --tui-chart-3: var(--tui-support-09);
+}

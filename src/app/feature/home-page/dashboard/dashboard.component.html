@@ -1,0 +1,60 @@
+<div>
+  <tui-input-count
+    class="b-form"
+    [(ngModel)]="activeItemIndex"
+  >
+    activeItemIndex
+  </tui-input-count>
+
+  <tui-arc-chart
+    size="l"
+    class="tui-space_right-4"
+    [value]="value"
+    [(activeItemIndex)]="activeItemIndex"
+  >
+    Total value
+  </tui-arc-chart>
+</div>
+
+<div>
+  <tui-axes
+    axisY="none"
+    class="axes"
+    [axisXLabels]="axisXLabels"
+    [axisYSecondaryLabels]="axisYSecondaryLabels"
+    [horizontalLines]="2"
+    [horizontalLinesHandler]="horizontalLinesHandler"
+    [verticalLines]="4"
+    [verticalLinesHandler]="verticalLinesHandler"
+  >
+    <tui-bar-chart
+      class="chart"
+      [max]="maxValue"
+      [tuiHintContent]="hint"
+      [value]="valueBar"
+    ></tui-bar-chart>
+  </tui-axes>
+
+  <ng-template
+    #hint
+    let-setIndex
+  >
+    <p
+      *ngFor="let item of value; let index = index"
+      class="hint"
+    >
+        <span
+          class="dot"
+          [style.background]="getBackground(index)"
+        ></span>
+      <span class="name">{{ getSetName(index) }}</span>
+      <tui-money
+        [singleColor]="true"
+        [value]="item[setIndex] * 1000"
+      ></tui-money>
+    </p>
+  </ng-template>
+
+</div>
+
+

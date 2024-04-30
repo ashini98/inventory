@@ -1,0 +1,55 @@
+<div class="p-5 ">
+  <div class="flex justify-between items-center mb-3">
+    <div class="flex flex-row items-center pr-20">
+      <tui-input
+        (debouncedValue)="onSearch($event)"
+        [ngModel]="searchString"
+        appDebounce
+        tuiTextfieldSize="m">
+        Search
+        <input
+          class="flex w-full rounded-lg focus:outline-none
+                    placeholder-pink-50 border border-pink-900 bg-emerald-50"
+          placeholder="Search"
+          tuiTextfield
+        />
+      </tui-input>
+
+    </div>
+    <div>
+      <img class="mx-auto h-10 w-auto" src="assets/logo.ico" alt="Storsio">
+      <h2 class="mt-5 text-center text-2xl font-bold leading-9
+    tracking-tight text-gray-900">Items</h2>
+    </div>
+    <div  class="flex flex-row space-x-4 mb-4">
+      <button (click)="navigateToFormPage()" appearance="add-new" icon="tuiIconPlus"
+              size="m" tuiButton type="submit">Add New Item</button>
+    </div>
+  </div>
+
+  <div *ngFor="let item of tableData" class="flex flex-col gap-4 bg-emerald-200 rounded-lg m-2">
+    <div class="flex  items-center space-x-3">
+      <img class="w-20 h-20 ml-2 my-2 rounded-lg" src="assets/profile.png">
+      <div >
+
+        <h3 class="text-lg font-bold text-pink-800">{{ item.name }}</h3>
+        <h3 class="text-lg font-bold text-pink-800">{{ item.description }}</h3>
+        <p class="text-sm font-bold text-pink-800">Price:{{ item.price }} </p>
+        <p class="text-sm font-bold text-pink-800">Quantity:{{ item.qty }} </p>
+      </div>
+      <div class="flex-1"></div>
+      <div class="flex justify-end right-16 align">
+        <button (click)="onView(item)" appearance="edit-save"
+                class="m-1 bg-emerald-800 text-red-50 w-24 h-5 rounded-lg" size="m"
+                tuiButton tuiSurface="elevated">View
+        </button>
+        <button (click)="onEdit.emit(item)" appearance="edit-save"
+                class="m-1 bg-pink-800 text-red-50 w-24 h-5 rounded-lg" size="m"
+                tuiButton tuiSurface="elevated">Edit
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+

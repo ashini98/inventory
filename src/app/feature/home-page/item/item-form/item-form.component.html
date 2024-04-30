@@ -1,0 +1,112 @@
+<tui-scrollbar class="box">
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 rounded-lg">
+    <div>
+      <img class="mx-auto h-10 w-auto" src="assets/logo.ico" alt="Storsio">
+      <h2 class="mt-5 text-center text-2xl font-bold leading-9
+    tracking-tight text-gray-900">Add New Item</h2>
+    </div>
+
+    <div class="mt-10">
+      <form [formGroup]="form" class="space-y-4" action="#" method="POST">
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div clas="flex flex-col">
+              <label tuiLabel="name" for="name" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Item Name</label>
+              <div class="mt-2">
+                <tui-input tuiHintContent="'Enter Item Name"
+                           formControlName="name" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="name" type="text" id="name" placeholder="Mobile Phone" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="name"></tui-error>
+              </div>
+            </div>
+          </div>
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="description" for="description" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Description</label>
+              <div class="mt-2">
+                <tui-input tuiHintContent="'Enter Item Description"
+                           formControlName="description" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="description" type="text" id="description" placeholder="Iphone" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="description"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label class="tui-text_body-m-2 font-semibold ">
+                <span class="tui-required text-red-500"></span>Category:</label>
+              <div class="mt-2">
+                <tui-select [stringify]="stringifyCategory" formControlName="category" tuiTextfieldSize="m">
+                  <input placeholder="Select a Category" tuiTextfield/>
+                  <tui-data-list-wrapper *tuiDataList [itemContent]="itemContent" [items]="itemCategories"
+                                         categories="categories"></tui-data-list-wrapper>
+                </tui-select>
+                <ng-template #itemContent let-data>
+                  <div class="template">
+                    {{data.name}}
+                  </div>
+                </ng-template>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="category"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="price" class="tui-text_body-m-2 font-semibold">
+                <span class="tui-required text-red-500"></span>Price:</label>
+              <div class="mt-2">
+                <tui-input formControlName="price" id="price" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true" [tuiHintContent]="'Price'">Price<input
+                  autocomplete="Price" placeholder="Rs.00000.00" tuiTextfield type="number"/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="price"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="qty" class="tui-text_body-m-2 font-semibold">
+                <span class="tui-required text-red-500"></span>Quantity:</label>
+              <div class="mt-2">
+                <tui-input formControlName="qty" id="qty" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true" [tuiHintContent]="'Quantity'">Quantity<input
+                  autocomplete="qty" placeholder="10" tuiTextfield type="text"/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="qty"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-spacing m-4">
+          <button (click)="onSubmit()" [disabled]="form.invalid || isSubmitting"
+                  [showLoader]="isSubmitting" appearance="edit-save"
+                  class="m-1 bg-pink-800 text-red-50 w-24 h-5 rounded" size="m"
+                  tuiButton tuiSurface="elevated" type="submit">
+            {{ inputValue ? 'Update' : 'Create' }}
+          </button>
+          <button (click)="onCancel()" [disabled]="!form.touched && !inputValue"
+                  [showLoader]="isSubmitting" appearance="edit-cancel"
+                  class="m-1 bg-pink-800 text-red-50 w-24 h-10 rounded" size="m" tuiButton
+                  type="button">
+            {{ inputValue ? 'Cancel' : 'Clear' }}
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</tui-scrollbar>
+

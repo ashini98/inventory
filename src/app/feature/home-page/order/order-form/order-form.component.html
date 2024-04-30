@@ -1,0 +1,169 @@
+<tui-scrollbar class="box">
+  <div class="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8 rounded-lg">
+    <div>
+      <img class="mx-auto h-10 w-auto" src="assets/logo.ico" alt="Storsio">
+      <h2 class="mt-5 text-center text-2xl font-bold leading-9
+    tracking-tight text-gray-900">Add New Order</h2>
+    </div>
+
+    <div class="mt-10">
+      <form [formGroup]="form" class="space-y-4" action="#" method="POST">
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div clas="flex flex-col">
+              <label tuiLabel="name" for="name" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Item Name</label>
+              <div class="mt-2">
+                <tui-input tuiHintContent="'Enter Item Name"
+                           formControlName="name" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="name" type="text" id="name" placeholder="Mobile Phone" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="name"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="qty" for="qty" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Item Quantity</label>
+              <div class="mt-2">
+                <tui-input-number tuiHintContent="'Enter Item Quantity"
+                           formControlName="qty" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="qty" type="number" id="qty" placeholder="10" tuiTextfield/>
+                </tui-input-number>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="qty"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label class="tui-text_body-m-2 font-semibold ">
+                <span class="tui-required text-red-500"></span>Unit Price</label>
+              <div class="mt-2">
+                <tui-input-number formControlName="price" tuiTextfieldSize="m">
+                  <input autocomplete="price" type="number" id="price" placeholder="Rs 1000.00" tuiTextfield/>
+                </tui-input-number>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="price"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="status" class="tui-text_body-m-2 font-semibold">
+                <span class="tui-required text-red-500"></span>Status</label>
+              <div class="mt-2">
+                <tui-input formControlName="status" id="status" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true" [tuiHintContent]="'Active'">Status<input
+                  autocomplete="Status" placeholder="Active" tuiTextfield type="text"/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="status"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label for="date" class="tui-text_body-m-2 font-semibold">
+                <span class="tui-required text-red-500"></span>Order Date</label>
+              <div class="mt-2">
+                <tui-input-date formControlName="date" id="date" tuiTextfieldSize="m"
+                           [tuiTextfieldCleaner]="true" [tuiHintContent]="'Date'">Choose a date
+                  <input autocomplete="date" placeholder="DD/MM/YYYY" tuiTextfield/>
+                </tui-input-date>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="date"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div clas="flex flex-col">
+              <label tuiLabel="customerName" for="customerName" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Customer Name</label>
+              <div class="mt-2">
+                <tui-input tuiHintContent="'Enter Customer Name"
+                           formControlName="customerName" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="customerName" type="text" id="customerName" placeholder="Thomas Yale" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="customerName"></tui-error>
+              </div>
+            </div>
+          </div>
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="phone" for="phone" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Customer Phone</label>
+              <div class="mt-2">
+                <tui-input-phone tuiHintContent="'Enter Customer Phone"
+                                  formControlName="phone" tuiTextfieldSize="m"
+                                  tuiTextfieldCleaner="true">
+                  <input autocomplete="phone" type="tel" id="phone" placeholder="+94 743474353" tuiTextfield/>
+                </tui-input-phone>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="phone"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-form__row tui-form__row_multi-fields">
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="address" for="address" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Customer Address</label>
+              <div class="mt-2">
+                <tui-input tuiHintContent="'Enter Customer Address"
+                           formControlName="address" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="address" type="text" id="address" placeholder="Order Shipping Address" tuiTextfield/>
+                </tui-input>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="address"></tui-error>
+              </div>
+            </div>
+          </div>
+
+          <div class="tui-form__multi-field">
+            <div class="flex flex-col">
+              <label tuiLabel="amount" for="amount" class="block text-sm font-medium
+        leading-6 text-gray-900"><span class="tui-required text-red-500"></span>Order Amount</label>
+              <div class="mt-2">
+                <tui-input-number tuiHintContent="'Enter Order Amount"
+                           formControlName="amount" tuiTextfieldSize="m"
+                           tuiTextfieldCleaner="true">
+                  <input autocomplete="amount" type="number" id="amount" placeholder="Rs 1000.00" tuiTextfield/>
+                </tui-input-number>
+                <tui-error [error]="[] | tuiFieldError | async" formControlName="amount"></tui-error>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tui-spacing m-4">
+          <button (click)="onSubmit()" [disabled]="form.invalid || isSubmitting"
+                  [showLoader]="isSubmitting" appearance="edit-save"
+                  class="m-1 bg-pink-800 text-red-50 w-24 h-5 rounded" size="m"
+                  tuiButton tuiSurface="elevated" type="submit">
+            {{ inputValue ? 'Update' : 'Create' }}
+          </button>
+          <button (click)="onCancel()" [disabled]="!form.touched && !inputValue"
+                  [showLoader]="isSubmitting" appearance="edit-cancel"
+                  class="m-1 bg-pink-800 text-red-50 w-24 h-10 rounded" size="m" tuiButton
+                  type="button">
+            {{ inputValue ? 'Cancel' : 'Clear' }}
+          </button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+</tui-scrollbar>
+
